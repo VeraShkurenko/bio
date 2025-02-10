@@ -126,9 +126,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     const BOOL mbCounter = 3;
     LPCWSTR mbContent[mbCounter] = { 
-        TEXT("ПІБ: Мартинюк Олег Валерійович\nВік: 20 з чимось..."), 
-        TEXT("Мови: українська, англійська, C++, Python, німецька, Java"),
-        TEXT("github: https://github.com/oleh-tft")};
+        TEXT("РџР†Р‘:РЁРєСѓСЂРµРЅРєРѕ Р’С–СЂР° РЎРµСЂРіС–С—РІРЅР°\nР’С–Рє:18"), 
+        TEXT("РњРѕРІРё: СѓРєСЂР°С—РЅСЃСЊРєР°, Р°РЅРіР»С–Р№СЃСЊРєР°, C++"),
+        TEXT("github:https://github.com/VeraShkurenko")};
 
     switch (message)
     {
@@ -138,11 +138,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             wchar_t buffer[256];
             for (LPCWSTR mb : mbContent)
             {
-                MessageBox(hWnd, mb, TEXT("Резюме"), MB_OK | MB_ICONINFORMATION);
+                MessageBox(hWnd, mb, TEXT("Р РµР·СЋРјРµ"), MB_OK | MB_ICONINFORMATION);
                 wordsCounter += wcslen(mb);
             }
-            wsprintfW(buffer, TEXT("Середня кількість символів: %d/%d = %d"), wordsCounter, mbCounter, wordsCounter / mbCounter);
-            MessageBox(hWnd, buffer, TEXT("Підсумок"), MB_OK | MB_ICONINFORMATION);
+            wsprintfW(buffer, TEXT("РЎРµСЂРµРґРЅСЏ РєС–Р»СЊРєС–СЃС‚СЊ СЃРёРјРІРѕР»С–РІ: %d/%d = %d"), wordsCounter, mbCounter, wordsCounter / mbCounter);
+            MessageBox(hWnd, buffer, TEXT("РџС–РґСЃСѓРјРѕРє"), MB_OK | MB_ICONINFORMATION);
         }
         break;
     case WM_COMMAND:
